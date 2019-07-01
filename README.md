@@ -24,3 +24,9 @@ Or
 ## Run the script to get an output based on mock data
 * Run `make run`
 
+## Assumptions
+
+This code is written under the following assumptions:
+* The exercise does not require building the database adapter or API client, in order to switch the current all you need to do is implement a new data_source class and use it in its relevant repository.
+* Both sources have no missing items, so all the ads in one source exists in the other source and vice verca.
+
