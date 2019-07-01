@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './lib/services/campaign_sync'
+require 'require_all'
+require_all 'lib'
 
-p CampaignSync.call
+p CampaignsSync.call
