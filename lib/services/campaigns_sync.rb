@@ -13,23 +13,19 @@ class CampaignsSync
 
   private
 
-  def discrepancies(campaign)
-    CampaignDiscrepanciesDetector.call(
-      local_campaign: campaign,
-      remote_ad: remote(campaign)
-    )
-  end
-
-  def remote(campaign)
-    grouped_remote_ads[campaign.external_reference].first
-  end
-
   def local_campaigns
     @local_campaigns ||= LocalCampaignsRepository.all
   end
 
-  def grouped_remote_ads
-    @grouped_remote_ads ||= remote_ads.group_by(&:reference)
+  def discrepancies(campaign)
+    CampaignDiscrepanciesDetector.call(
+      local_campaign: campaign,
+      remote_ad: remote_ad(campaign.external_reference)
+    )
+  end
+
+  def remote_ad(reference)
+    remote_ads.find { |ad| ad.reference == reference }
   end
 
   def remote_ads
