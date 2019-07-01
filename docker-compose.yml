@@ -6,7 +6,7 @@ services:
       target: dev
     stdin_open: true
     tty: true
-    command: ./bin/start_dev_server
+    command: 'ruby app.rb'
     volumes:
       - ".:/campaign_sync"
       - bundle:/bundle
