@@ -27,6 +27,9 @@ tear-down:
 	$(call dc, down)
 stop:
 	$(call dc, stop)
+lint:
+	$(call dc-run, bundle exec rubocop -a)
+
 .PHONY: test
 test:
 	$(call dc-run, bundle exec rspec)
