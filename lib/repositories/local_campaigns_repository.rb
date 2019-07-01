@@ -10,8 +10,9 @@ class LocalCampaignsRepository < BaseRepository
     # with just an active records model Campaign
 
     FileDataSource.new(
+      data_key: 'campaigns',
       file_name: 'local_campaigns.json',
-      model_class:LocalCampaign
+      model_class: LocalCampaign
     )
   end
 end

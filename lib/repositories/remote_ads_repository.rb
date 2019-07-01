@@ -8,8 +8,9 @@ class RemoteAdsRepository < BaseRepository
     # and wrapping it into value objects
 
     FileDataSource.new(
+      data_key: 'ads',
       file_name: 'remote_ads.json',
-      model_class:RemoteAd
+      model_class: RemoteAd
     )
   end
 end

@@ -11,7 +11,11 @@ RSpec.describe RemoteAdsRepository do
     before do
       allow(FileDataSource)
         .to receive(:new)
-        .with(file_name: 'remote_ads.json', model_class: RemoteAd)
+        .with(
+          data_key: 'ads',
+          file_name: 'remote_ads.json',
+          model_class: RemoteAd
+        )
         .and_return(file_data_source)
     end
 
