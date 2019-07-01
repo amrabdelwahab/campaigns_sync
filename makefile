@@ -1,4 +1,4 @@
-dc=docker-compose -f docker-compose.yml $(1)
+dc=docker-compose -f ./docker/docker-compose.yml $(1)
 dc-run=$(call dc, run --rm web $(1))
 
 usage:

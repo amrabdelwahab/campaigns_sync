@@ -6,9 +6,9 @@ services:
       target: dev
     stdin_open: true
     tty: true
-    command: 'ruby app.rb'
+    command: 'ruby ./bin/app.rb'
     volumes:
-      - ".:/campaign_sync"
+      - "../.:/campaign_sync"
       - bundle:/bundle
     ports:
       - "3000:3000"
