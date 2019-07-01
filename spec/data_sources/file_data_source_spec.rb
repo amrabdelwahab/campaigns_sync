@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe FileDataSource do
   let(:data_key) { 'data_key' }
   let(:file_name) { 'file_name.json' }

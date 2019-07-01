@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe RemoteAd do
   let(:ad) { described_class.new(raw_data) }
   let(:raw_data) do

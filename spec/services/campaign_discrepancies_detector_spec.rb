@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe CampaignDiscrepanciesDetector do
   describe '::call' do
     let(:local_campaign) do

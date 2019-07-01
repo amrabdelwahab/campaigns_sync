@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe RemoteAdsRepository do
   describe '::all' do
     subject { described_class.all }

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
-
 RSpec.describe CampaignsSync do
   describe '::call' do
     subject { described_class.call }
