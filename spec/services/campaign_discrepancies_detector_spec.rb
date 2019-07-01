@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe CampaignDiscrapenciesDetector do
+RSpec.describe CampaignDiscrepanciesDetector do
   describe '::call' do
     let(:local_campaign) do
       instance_double(
@@ -49,8 +49,8 @@ RSpec.describe CampaignDiscrapenciesDetector do
           'discrepancies' => [
             {
               'status' => {
-              'remote' => 'status_2',
-              'local' => 'status_1'
+                'remote' => 'status_2',
+                'local' => 'status_1'
               }
             },
             {

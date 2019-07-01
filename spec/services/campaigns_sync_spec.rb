@@ -24,8 +24,8 @@ RSpec.describe CampaignsSync do
 
       it { is_expected.to eq [] }
 
-      it 'does not create any discrapencies matchers' do
-        expect(CampaignDiscrapenciesDetector)
+      it 'does not create any discrepancies matchers' do
+        expect(CampaignDiscrepanciesDetector)
           .not_to receive(:call)
 
         subject
@@ -42,15 +42,15 @@ RSpec.describe CampaignsSync do
       let(:difference) { nil }
 
       before do
-        allow(CampaignDiscrapenciesDetector)
+        allow(CampaignDiscrepanciesDetector)
           .to receive(:call)
           .with(local_campaign: local_version, remote_ad: remote_version)
           .and_return(difference)
           .once
       end
 
-      it 'calls the CampaignDiscrapenciesDetector twice' do
-        expect(CampaignDiscrapenciesDetector)
+      it 'calls the CampaignDiscrepanciesDetector twice' do
+        expect(CampaignDiscrepanciesDetector)
           .to receive(:call)
           .once
 

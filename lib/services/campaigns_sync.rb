@@ -7,14 +7,14 @@ class CampaignsSync
 
   def call
     local_campaigns
-      .map { |campaign| discrapencies(campaign) }
+      .map { |campaign| discrepancies(campaign) }
       .compact
   end
 
   private
 
-  def discrapencies(campaign)
-    CampaignDiscrapenciesDetector.call(
+  def discrepancies(campaign)
+    CampaignDiscrepanciesDetector.call(
       local_campaign: campaign,
       remote_ad: remote(campaign)
     )

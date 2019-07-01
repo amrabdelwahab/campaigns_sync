@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CampaignDiscrapenciesDetector
+class CampaignDiscrepanciesDetector
   ATTRIBUTES_TO_COMPARE = %i[status description].freeze
 
   def self.call(local_campaign:, remote_ad:)
@@ -31,11 +31,11 @@ class CampaignDiscrapenciesDetector
   def formatted_output
     {
       'remote_reference' => local.external_reference,
-      'discrepancies' => formatted_discrapencies
+      'discrepancies' => formatted_discrepancies
     }
   end
 
-  def formatted_discrapencies
+  def formatted_discrepancies
     discrepant_attributes.map do |attr|
       {
         attr.to_s => {
