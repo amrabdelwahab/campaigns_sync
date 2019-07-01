@@ -5,20 +5,20 @@
       "job_id": 999,
       "external_reference": "1",
       "status": "disabled",
-      "ad_description": "Description for campaign 11"
+      "ad_description": "Description for campaign 110"
     },
     {
       "id": 222,
       "job_id": 888,
       "external_reference": "2",
-      "status": "disabled",
+      "status": "active",
       "ad_description": "Description for campaign 12"
     },
     {
       "id": 333,
       "job_id": 777,
       "external_reference": "3",
-      "status": "disabled",
+      "status": "enabled",
       "ad_description": "Description for campaign 13"
     }
   ]
