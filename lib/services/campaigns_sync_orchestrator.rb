@@ -7,9 +7,6 @@ class CampaignsSyncOrchestrator
 
   def call
     (left_inner_discrepancies + right_outer_discrepancies).compact
-    # local_campaigns
-    #   .map { |campaign| discrepancies(campaign) }
-    #   .compact
   end
 
   private
