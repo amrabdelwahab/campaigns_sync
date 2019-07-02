@@ -3,4 +3,5 @@
 require 'require_all'
 require_all 'lib'
 
-p CampaignsSync.call
+require 'pp'
+pp CampaignsSyncOrchestrator.call
