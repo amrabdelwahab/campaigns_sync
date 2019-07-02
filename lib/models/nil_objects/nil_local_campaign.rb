@@ -10,4 +10,6 @@ class NilLocalCampaign
   ATTRIBUTES.each do |attribute|
     alias_method attribute, :attribute
   end
+
+  private :attribute
 end
