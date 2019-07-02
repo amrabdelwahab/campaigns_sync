@@ -2,7 +2,17 @@
 
 class CampaignsSyncOrchestrator
   def self.call
-    new.call
+    new(
+      local_campaigns: LocalCampaignsRepository.all,
+      remote_ads: RemoteAdsRepository.all
+    ).call
+  end
+
+  attr_reader :local_campaigns, :remote_ads
+
+  def initialize(local_campaigns:, remote_ads:)
+    @local_campaigns = local_campaigns
+    @remote_ads = remote_ads
   end
 
   def call
@@ -24,14 +34,6 @@ class CampaignsSyncOrchestrator
     return [] if unmatched_remote_ads.empty?
 
     RightOuterSyncOrchestrator.call(remote_ads: unmatched_remote_ads)
-  end
-
-  def local_campaigns
-    @local_campaigns ||= LocalCampaignsRepository.all
-  end
-
-  def remote_ads
-    @remote_ads ||= RemoteAdsRepository.all
   end
 
   def unmatched_remote_ads
