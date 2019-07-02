@@ -28,5 +28,5 @@ Or
 
 This code is written under the following assumptions:
 * The exercise does not require building the database adapter or API client, in order to switch the current all you need to do is implement a new data_source class and use it in its relevant repository.
-* Both sources have no missing items, so all the ads in one source exists in the other source and vice verca.
+* Not all  local campaigns have a remote Ad corresponding to its external reference.
 

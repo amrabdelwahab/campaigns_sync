@@ -25,7 +25,8 @@ class CampaignsSync
   end
 
   def remote_ad(reference)
-    remote_ads.find { |ad| ad.reference == reference }
+    remote_ads.find { |ad| ad.reference == reference } ||
+      NilRemoteAd.new
   end
 
   def remote_ads

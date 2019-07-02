@@ -20,6 +20,13 @@
       "external_reference": "3",
       "status": "enabled",
       "ad_description": "Description for campaign 13"
+    },
+    {
+      "id": 444,
+      "job_id": 666,
+      "external_reference": "10",
+      "status": "active",
+      "ad_description": "Description for campaign 100"
     }
   ]
 }
