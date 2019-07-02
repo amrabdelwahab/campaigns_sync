@@ -5,7 +5,7 @@ RSpec.describe CampaignDiscrepanciesDetector do
     let(:local_campaign) do
       instance_double(
         LocalCampaign,
-        external_reference: 'reference',
+        external_reference: 'local_reference',
         status: local_status,
         description: local_description
       )
@@ -14,6 +14,7 @@ RSpec.describe CampaignDiscrepanciesDetector do
     let(:remote_ad) do
       instance_double(
         RemoteAd,
+        reference: 'remote_reference',
         status: remote_status,
         description: remote_description
       )
@@ -43,7 +44,10 @@ RSpec.describe CampaignDiscrepanciesDetector do
 
       let(:expected_output) do
         {
-          'remote_reference' => 'reference',
+          'reference' => {
+            'remote' => 'remote_reference',
+            'local' => 'local_reference'
+          },
           'discrepancies' => [
             {
               'status' => {

@@ -30,8 +30,15 @@ class CampaignDiscrepanciesDetector
 
   def formatted_output
     {
-      'remote_reference' => local.external_reference,
+      'reference' => formatted_references,
       'discrepancies' => formatted_discrepancies
+    }
+  end
+
+  def formatted_references
+    {
+      'local' => local.external_reference,
+      'remote' => remote.reference
     }
   end
 
